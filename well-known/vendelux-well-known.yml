@@ -1,0 +1,105 @@
+generated: '2026-09-02'
+method: probed
+source: >-
+  Live HTTP probes of the named /.well-known/ path list against every Vendelux host that resolves
+  in DNS. Nothing was served: vendelux.com answers every /.well-known/* path with an nginx 403 (the
+  path is blocked at the edge, not a Cloudflare interstitial), api.vendelux.com answers every path
+  with a Cloudflare origin 502, and developers.vendelux.com (a WordPress engineering blog) answers
+  with its WordPress 404 template. No WellKnown or SecurityTxt pointer is emitted, because no path
+  returned a 200 carrying a real document.
+note: >-
+  Vendelux serves no /.well-known/ documents of any kind — no security.txt, no api-catalog, no
+  OAuth/OIDC metadata, no agent card, no ai-plugin manifest. This is consistent with the rest of the
+  profile: Vendelux publishes no developer API, so there is no authorization server or API catalog to
+  advertise. api.vendelux.com is a real DNS record (Cloudflare-proxied A records, no CNAME) whose
+  origin returned HTTP 502 for every path probed on 2026-09-02, so it could not be characterised.
+hosts:
+- host: vendelux.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+- host: api.vendelux.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 502
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 502
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 502
+    file: null
+  - path: /.well-known/api-catalog
+    status: 502
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 502
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 502
+    file: null
+  - path: /.well-known/agent.json
+    status: 502
+    file: null
+- host: developers.vendelux.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+x-agent-card-probe:
+  result: miss
+  note: >-
+    STEP 0b/3c A2A probe. /.well-known/agent-card.json and the legacy /.well-known/agent.json were
+    probed on all three hosts. No 200, and no body parsing as an AgentCard object. Per the pipeline
+    contract nothing is written to a2a/ and no AgentCard pointer is emitted — an agent card is
+    search-only and must never be authored on a provider's behalf.
+x-ai-crawler-policy:
+  robots_txt: https://vendelux.com/robots.txt
+  status: 200
+  disallowed_agents:
+  - CCBot
+  - GPTBot
+  - Google-Extended
+  - Omgilibot
+  - FacebookBot
+  note: >-
+    Vendelux's robots.txt explicitly Disallows five AI/LLM crawlers from the entire site while
+    allowing general crawlers everywhere except /app/feed and /app/myprospects. This is a deliberate
+    agent-exclusion posture and is recorded here as observed fact, not as a defect.

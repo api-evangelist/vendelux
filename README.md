@@ -64,5 +64,39 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Vendelux is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Vendelux is an AI-native event marketing and B2B event intelligence platform. It helps go-to-market
+teams decide which conferences and trade shows to attend, pre-book qualified meetings before an
+event starts, and attribute pipeline back to specific events — from a proprietary database of
+250,000+ global B2B events. Founded in 2021 by Alex Reynolds and Stefan Deeran, headquartered in
+New York City, and backed by FirstMark Capital, Cervin Ventures, Tenacity Ventures and Tri-Valley
+Ventures.
+
+- Website: https://vendelux.com/
+- Pricing: https://vendelux.com/pricing
+- Help Center: https://vendelux.com/help
+- Trust Center: https://trust.vendelux.com/
+- Engineering blog: https://developers.vendelux.com/
+- GitHub: https://github.com/Vendelux
+
+## API surface: none published
+
+Vendelux publishes **no public developer API**. Probed 2026-09-02: no OpenAPI, GraphQL schema,
+AsyncAPI, webhook catalog, SDK, CLI, MCP server, A2A agent card, developer portal or API reference
+exists on any Vendelux host.
+
+- `api.vendelux.com` is a real DNS record but its origin returned HTTP 502 on every path probed.
+- `developers.vendelux.com` is a WordPress **engineering blog**, not a developer portal, and
+  returned HTTP 404 for every spec and `/.well-known/` path.
+- The `Vendelux` GitHub organization is public but has **zero** repositories.
+- No `vendelux` package exists on npm, PyPI, RubyGems, crates.io or Packagist.
+- No pricing tier lists API access, an API key, or a call quota.
+
+The only programmatic surface Vendelux sells is a CRM integration in which **Vendelux is the OAuth
+client**, connecting outbound into a customer's Salesforce or HubSpot tenant — consuming someone
+else's API, not publishing one. Vendelux's Terms of Service §2.4 additionally prohibits automated
+access outside its own Integration Tools, and its `robots.txt` disallows CCBot, GPTBot,
+Google-Extended, Omgilibot and FacebookBot site-wide.
+
+What Vendelux *does* publish, and what this profile records, is a compliance and commercial surface:
+a Drata-hosted Trust Center, a GDPR / EU-US Data Privacy Framework privacy program with a public
+subprocessor list, and three named (but unpriced) plan tiers.

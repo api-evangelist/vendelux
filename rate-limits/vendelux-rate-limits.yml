@@ -1,0 +1,25 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  https://vendelux.com/pricing (200), https://vendelux.com/help (200) and the four CRM-integration
+  help articles. Searched for published API limits, throttles, quotas and rate-limit response
+  headers; none exist because Vendelux publishes no API.
+limit_count: 0
+limit_count_note: >-
+  An honest zero. Vendelux exposes no public API, so there is no request limit, no window, no burst
+  allowance, no X-RateLimit-*/RateLimit-* response header and no 429 behaviour to record. This is
+  the absence of an API surface, not an undocumented limit on an existing one.
+limits: []
+response_headers: []
+exhaustion_status_code: null
+quota_model:
+  note: >-
+    What Vendelux does meter is product consumption, not API calls, and those quotas are recorded in
+    plans/vendelux-plans-pricing.yml rather than here: full event insights per month (20 on
+    Starter), monthly lead credits (5,000 on Plus), and annual meeting campaign credits (10 on
+    Plus). They are enforced in the web application and in the CRM sync, and no header or status
+    code is published for hitting them.
+  metered_units:
+  - full event insights per month
+  - monthly lead credits
+  - annual meeting campaign credits

@@ -1,17 +1,47 @@
 aid: vendelux
 name: Vendelux
-description: 'Vendelux is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Vendelux is an AI-native event marketing and B2B event intelligence platform that helps
+  go-to-market teams decide which conferences and trade shows to attend, pre-book qualified
+  meetings before an event starts, and attribute pipeline back to specific events. It maintains a
+  proprietary database of 250,000+ global B2B events, enriched from first-party conference-organizer
+  feeds and monitoring of 185,000+ sources, and pushes attendee, lead and ROI data into customer
+  CRMs. Product surfaces are Event Discovery, Meetings, Segments/List Builder and CRM Integration
+  (Salesforce and HubSpot). Founded in 2021 by Alex Reynolds and Stefan Deeran, headquartered in
+  New York City, and backed by FirstMark Capital, Cervin Ventures, Tenacity Ventures and Tri-Valley
+  Ventures. Vendelux publishes no public developer API: as of this profile its programmatic surface
+  consists of OAuth connections Vendelux makes INTO a customer's Salesforce or HubSpot tenant, not
+  an API, SDK, webhook catalog or machine-readable contract it exposes to developers.
+image: https://vendelux.com/wp-content/themes/astra-child/assets/images/logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/vendelux/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-02'
 modified: '2026-09-02'
 tags:
+- Event Intelligence
+- Event Marketing
+- B2B Events
+- Marketing Intelligence
+- Sales Intelligence
+- Event Data
+- CRM Integration
+- Demand Generation
+- Field Marketing
+- Conference Data
 - Company
+tags_raw:
+- event-intelligence
+- event-marketing
+- b2b-events
+- marketing-intelligence
+- sales-intelligence
+- event-data
+- crm-integration
+- demand-generation
+- field-marketing
+- conference-data
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +49,59 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/vendelux-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://vendelux.com/
+- type: Pricing
+  url: https://vendelux.com/pricing
+- type: TermsOfService
+  url: https://vendelux.com/terms
+- type: PrivacyPolicy
+  url: https://vendelux.com/privacy
+- type: Support
+  url: https://vendelux.com/help
+- type: Blog
+  url: https://vendelux.com/blog
+- type: BlogRSS
+  url: https://developers.vendelux.com/feed/
+- type: Login
+  url: https://vendelux.com/app/events/search
+- type: GitHubOrganization
+  url: https://github.com/Vendelux
+- type: TrustCenter
+  url: https://trust.vendelux.com/
+- type: Compliance
+  url: conformance/vendelux-conformance.yml
+- type: Conformance
+  url: conformance/vendelux-conformance.yml
+- type: Plans
+  url: plans/vendelux-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/vendelux-rate-limits.yml
+- type: LLMsTxt
+  url: llms/vendelux-llms.txt
+x-enrichment:
+  date: '2026-09-02'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Vendelux ships an end-user event-marketing web app and nothing else: developers.vendelux.com is
+    an engineering hiring blog rather than a developer portal, api.vendelux.com resolves but its
+    origin 502s on every path, the public GitHub org has zero repositories, no `vendelux` package
+    exists on npm/PyPI/RubyGems/crates.io/Packagist, and the only programmatic surface sold is
+    Vendelux acting as the OAuth client into a customer's Salesforce or HubSpot tenant.
+  evidence:
+  - url: https://api.vendelux.com/openapi.json
+    status: 502
+  - url: https://developers.vendelux.com/openapi.json
+    status: 404
+  - url: https://vendelux.com/llms.txt
+    status: 404
+  - url: https://github.com/Vendelux
+    status: 200
+  checked: '2026-09-02'

@@ -1,0 +1,93 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  https://vendelux.com/privacy (200, effective 2026-05-04), https://vendelux.com/terms (200, last
+  updated 2024-02-07), https://vendelux.com/pricing (200), and the Drata-hosted Trust Center at
+  https://trust.vendelux.com/ (delegated via CNAME trust.cname.drata.com).
+note: >-
+  Vendelux publishes a real privacy/compliance program but no API contract, so every API-technical
+  conformance assertion below is `false` for the same single reason: there is nothing to conform
+  with. The regulatory/privacy assertions are the ones carrying evidence.
+conformance:
+- id: gdpr
+  conforms: true
+  evidence: >-
+    The Privacy Policy names the GDPR and states that GDPRLOCAL is appointed as Vendelux's EU
+    representative under GDPR Article 27. A Data Protection contact and a published subprocessor
+    list (https://vendelux.com/vendelux-subprocessors/) are both referenced.
+  source: https://vendelux.com/privacy
+- id: eu-us-data-privacy-framework
+  conforms: true
+  evidence: >-
+    The Privacy Policy names the EU-US Data Privacy Framework, the Swiss-U.S. Data Privacy Framework
+    and the UK Extension as the transfer mechanisms relied on.
+  source: https://vendelux.com/privacy
+- id: us-state-privacy
+  conforms: true
+  evidence: >-
+    A dedicated "Privacy statement for residents of certain states" page is published and linked
+    from the main Privacy Policy, covering US state privacy rights.
+  source: https://vendelux.com/privacy-statement-for-residents-of-certain-states
+- id: trust-center-published
+  conforms: true
+  evidence: >-
+    A Drata-hosted Trust Center is operated at https://trust.vendelux.com/ (CNAME to
+    trust.cname.drata.com) and is cited by Vendelux's own Privacy Policy and linked from the site
+    footer. The framework list on it could not be read — Cloudflare returned a bot challenge — so no
+    specific certification (SOC 2, ISO 27001, or otherwise) is asserted here. See
+    security/vendelux-trust-center.yml.
+  source: https://trust.vendelux.com/
+- id: sso-saml
+  conforms: true
+  evidence: >-
+    Single Sign-On (SSO) is published as an included feature of the Enterprise tier on the pricing
+    page. The protocol (SAML vs OIDC) and the IdP list are not stated.
+  source: https://vendelux.com/pricing
+- id: oauth2
+  conforms: false
+  evidence: >-
+    Vendelux is an OAuth 2.0 CLIENT, not an authorization server. The help centre documents
+    completing an OAuth flow into a customer's Salesforce or HubSpot tenant (including HubSpot scope
+    requirements and the Salesforce refresh-token policy), which is Vendelux consuming those
+    providers' OAuth. Vendelux itself publishes no authorization endpoint, no token endpoint, no
+    scope reference and no /.well-known/oauth-authorization-server.
+  source: https://vendelux.com/help/crm-for-all-customer-onboarding-information
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration is not served on any Vendelux host. See well-known/vendelux-well-known.yml.
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI or Swagger document is published. STEP 0b contract discovery probed
+    /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /docs, /redoc,
+    /api/schema and /schema against api.vendelux.com (HTTP 502 on every path),
+    developers.vendelux.com (HTTP 404 on every path) and vendelux.com (edge-challenged).
+- id: graphql
+  conforms: false
+  evidence: /graphql returned no GraphQL surface on any host; api.vendelux.com/graphql returned HTTP 502.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is documented anywhere on the site or in the help centre.
+- id: rfc9457
+  conforms: false
+  evidence: No error catalogue or problem-type surface exists; there is no API to return one.
+- id: rfc9116
+  conforms: false
+  evidence: /.well-known/security.txt is not served (HTTP 403 at the vendelux.com edge, 404 on developers.vendelux.com).
+- id: a2a
+  conforms: false
+  evidence: >-
+    No A2A Agent Card at /.well-known/agent-card.json or the legacy /.well-known/agent.json on any
+    host.
+- id: mcp
+  conforms: false
+  evidence: >-
+    No hosted MCP endpoint and no published stdio MCP package. mcp.vendelux.com does not resolve in
+    DNS, and no MCP server appears in any package registry.
+domain_standards:
+- id: null
+  note: >-
+    REWARD-ONLY and legitimately empty. The B2B event-intelligence / event-marketing market has no
+    established machine-readable domain standard for event, attendee or exhibitor data that a
+    contract could declare (there is no SCIM/OData/OpenRTB/HL7 equivalent for this sector). Vendelux
+    is not penalised for the absence, and none is invented to fill the slot.

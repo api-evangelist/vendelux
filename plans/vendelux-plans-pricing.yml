@@ -1,0 +1,72 @@
+generated: '2026-09-02'
+method: searched
+source: https://vendelux.com/pricing
+source_status: 200
+plan_count: 3
+currency: null
+billing_period: null
+pricing_disclosure: none
+pricing_disclosure_note: >-
+  Vendelux publishes three named tiers with itemised feature and quota inclusions, but publishes NO
+  price, currency or billing period for any of them. Every tier routes to a "Talk to sales" / demo
+  request. A buyer cannot determine cost, and an agent cannot compare Vendelux on price, without a
+  sales conversation. plan_count is 3 because three real tiers are published; the money is what is
+  missing.
+api_access_in_any_plan: false
+api_access_note: >-
+  No tier lists API access, developer access, an API key allowance, or a call quota as an included
+  feature. The only programmatic capability sold is the Salesforce/HubSpot CRM integration, which is
+  Vendelux connecting outbound into the customer's CRM.
+plans:
+- name: Starter
+  price: null
+  currency: null
+  billing_period: null
+  audience: Startups and small teams
+  quota:
+    events_database: 250000+
+    full_event_insights_per_month: 20
+  included:
+  - Access to 250,000+ B2B events
+  - Full insights for 20 events per month
+  - Segments and event insight reports
+  - CRM integration
+  - Prospect following and event alerts
+  - Email support
+  api_access: false
+- name: Plus
+  price: null
+  currency: null
+  billing_period: null
+  audience: Demand generation, sales leaders, field marketers
+  quota:
+    event_insights: unlimited
+    monthly_lead_credits: 5000
+    annual_meeting_campaign_credits: 10
+  included:
+  - Unlimited event insights
+  - 5,000 monthly lead credits
+  - 10 annual meeting campaign credits
+  - CRM push
+  - Free contact and firmographic enrichments
+  - Dedicated Client Success Manager
+  - Dedicated Outreach Campaign Manager
+  - Up to 2 event strategy workshops
+  api_access: false
+- name: Enterprise
+  price: null
+  currency: null
+  billing_period: null
+  audience: Event marketers, marketing ops, revenue ops, event organizers
+  quota:
+    lead_credits: custom
+    annual_meeting_campaign_credits: custom
+  included:
+  - Custom lead credits with ongoing enrichments
+  - Custom annual meeting campaign credits
+  - On-demand reports and data team support
+  - Dedicated Enterprise CSM and Outreach Manager
+  - Custom strategy workshops
+  - Advanced user permissions
+  - Single Sign-On (SSO)
+  api_access: false

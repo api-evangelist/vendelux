@@ -1,0 +1,43 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  https://vendelux.com/privacy — the Vendelux Privacy Policy (effective 2026-05-04) states that
+  details of Vendelux's security practices are available at the "Vendelux Trust Center"
+  (https://trust.vendelux.com/). The same URL is linked three times from the vendelux.com footer.
+trust_center:
+  url: https://trust.vendelux.com/
+  present: true
+  platform: Drata
+  platform_evidence: >-
+    DNS CNAME trust.vendelux.com -> trust.cname.drata.com. — the hostname is delegated to Drata's
+    hosted Trust Center product, which is what establishes that this is a real, provider-operated
+    compliance surface rather than a marketing page.
+  http_status: 403
+  http_status_note: >-
+    The page could not be read. Cloudflare returned a managed bot challenge (HTTP 403 with the
+    response header `cf-mitigated: challenge` and the "Just a moment..." interstitial). Per the
+    pipeline contract a bot challenge is NOT a dead pointer: the page demonstrably exists — it is
+    delegated to Drata in DNS and cited by Vendelux's own privacy policy — and only our crawler was
+    turned away. We do not evade challenges.
+certifications: []
+certifications_note: >-
+  NOT READ, not absent. The specific certifications Vendelux lists (SOC 2, ISO 27001 or otherwise)
+  are behind the bot challenge above and were not observed, so none are asserted here. Drata Trust
+  Centers conventionally publish a framework list and allow NDA-gated report requests, but that is a
+  property of the product, not an observation about Vendelux, and it is not recorded as one.
+related_documents:
+- name: Privacy Policy
+  url: https://vendelux.com/privacy
+  effective: '2026-05-04'
+  status: 200
+- name: Subprocessors
+  url: https://vendelux.com/vendelux-subprocessors/
+  status: unverified
+  note: Cited by the Privacy Policy; not independently probed past the edge challenge.
+- name: Terms of Service
+  url: https://vendelux.com/terms
+  last_updated: '2024-02-07'
+  status: 200
+- name: Privacy statement for residents of certain states
+  url: https://vendelux.com/privacy-statement-for-residents-of-certain-states
+  status: unverified

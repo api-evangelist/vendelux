@@ -1,0 +1,48 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  Direct registry queries against npm, PyPI, RubyGems, crates.io and Packagist, plus the GitHub
+  organization and the vendelux.com help centre and pricing pages. No first-party (or third-party)
+  Vendelux client library exists in any package registry.
+package_count: 0
+official_sdk_count: 0
+note: >-
+  A recorded absence, from a real sweep. Vendelux ships no SDK, no client library and no CLI in any
+  language, on any registry. No `SDKs` or `Packages` pointer is emitted in apis.yml, because a
+  pointer asserts the provider publishes the thing and Vendelux does not. This follows directly from
+  there being no public API to wrap.
+packages: []
+registry_sweep:
+- registry: npm
+  endpoint: https://registry.npmjs.org/-/v1/search?text=vendelux
+  status: 200
+  matches: 0
+- registry: pypi
+  endpoint: https://pypi.org/pypi/vendelux/json
+  status: 404
+  matches: 0
+- registry: rubygems
+  endpoint: https://rubygems.org/api/v1/gems/vendelux.json
+  status: 404
+  matches: 0
+- registry: crates.io
+  endpoint: https://crates.io/api/v1/crates?q=vendelux
+  status: 200
+  matches: 0
+- registry: packagist
+  endpoint: https://packagist.org/search.json?q=vendelux
+  status: 200
+  matches: 0
+  note: >-
+    Only `vendelev/*` packages returned — an unrelated PHP author, not Vendelux. Not recorded as a
+    match.
+source_code:
+- host: github.com
+  org: https://github.com/Vendelux
+  status: 200
+  public_repos: 0
+  org_created: '2023-01-13'
+  note: >-
+    The GitHub organization `Vendelux` genuinely exists and is public, with `blog: vendelux.com`
+    set, but publishes ZERO public repositories and zero public gists. There is no open-source
+    surface, no example code, and no spec repository to harvest.
