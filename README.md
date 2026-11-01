@@ -64,39 +64,99 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Vendelux is an AI-native event marketing and B2B event intelligence platform. It helps go-to-market
-teams decide which conferences and trade shows to attend, pre-book qualified meetings before an
-event starts, and attribute pipeline back to specific events — from a proprietary database of
-250,000+ global B2B events. Founded in 2021 by Alex Reynolds and Stefan Deeran, headquartered in
-New York City, and backed by FirstMark Capital, Cervin Ventures, Tenacity Ventures and Tri-Valley
-Ventures.
+Vendelux is an AI-native event marketing and B2B event intelligence platform that helps go-to-market teams decide which conferences and trade shows to attend, pre-book qualified meetings before an event starts, and attribute pipeline back to specific events. It maintains a proprietary database of 250,000+ global B2B events, enriched from first-party conference-organizer feeds and monitoring of 185,000+ sources, and pushes attendee, lead and ROI data into customer CRMs. Product surfaces are Event Discovery, Meetings, Segments/List Builder and CRM Integration (Salesforce and HubSpot). Founded in 2021 by Alex Reynolds and Stefan Deeran, headquartered in New York City, and backed by FirstMark Capital, Cervin Ventures, Tenacity Ventures and Tri-Valley Ventures. Vendelux publishes no public developer API: as of this profile its programmatic surface consists of OAuth connections Vendelux makes INTO a customer's Salesforce or HubSpot tenant, not an API, SDK, webhook catalog or machine-readable contract it exposes to developers.
 
-- Website: https://vendelux.com/
-- Pricing: https://vendelux.com/pricing
-- Help Center: https://vendelux.com/help
-- Trust Center: https://trust.vendelux.com/
-- Engineering blog: https://developers.vendelux.com/
-- GitHub: https://github.com/Vendelux
+**Areas:** Event Intelligence · Event Marketing · B2B Events · Marketing Intelligence · Sales Intelligence · Event Data · CRM Integration · Demand Generation · Field Marketing · Conference Data
 
-## API surface: none published
+## Vendelux on APIs.io
 
-Vendelux publishes **no public developer API**. Probed 2026-09-02: no OpenAPI, GraphQL schema,
-AsyncAPI, webhook catalog, SDK, CLI, MCP server, A2A agent card, developer portal or API reference
-exists on any Vendelux host.
+Everything profiled for Vendelux is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/vendelux/](https://apis.io/providers/vendelux/)** — or go straight to one of the APIs or properties below.
 
-- `api.vendelux.com` is a real DNS record but its origin returned HTTP 502 on every path probed.
-- `developers.vendelux.com` is a WordPress **engineering blog**, not a developer portal, and
-  returned HTTP 404 for every spec and `/.well-known/` path.
-- The `Vendelux` GitHub organization is public but has **zero** repositories.
-- No `vendelux` package exists on npm, PyPI, RubyGems, crates.io or Packagist.
-- No pricing tier lists API access, an API key, or a call quota.
+### Published properties
 
-The only programmatic surface Vendelux sells is a CRM integration in which **Vendelux is the OAuth
-client**, connecting outbound into a customer's Salesforce or HubSpot tenant — consuming someone
-else's API, not publishing one. Vendelux's Terms of Service §2.4 additionally prohibits automated
-access outside its own Integration Tools, and its `robots.txt` disallows CCBot, GPTBot,
-Google-Extended, Omgilibot and FacebookBot site-wide.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-What Vendelux *does* publish, and what this profile records, is a compliance and commercial surface:
-a Drata-hosted Trust Center, a GDPR / EU-US Data Privacy Framework privacy program with a public
-subprocessor list, and three named (but unpriced) plan tiers.
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Vendelux Domain Security](https://apis.io/security/vendelux/vendelux-domain-security/)
+- [Vendelux Trust Center](https://apis.io/security/vendelux/vendelux-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Vendelux Plans Pricing](https://apis.io/plans/vendelux/vendelux-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Vendelux Rate Limits](https://apis.io/rate-limits/vendelux/vendelux-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://vendelux.com/)
+- [Pricing](https://vendelux.com/pricing)
+- [Support](https://vendelux.com/help)
+- [Blog](https://vendelux.com/blog)
+- [Trust centre](https://trust.vendelux.com/)
+- [Terms of service](https://vendelux.com/terms)
+- [Privacy policy](https://vendelux.com/privacy)
+- [GitHub](https://github.com/Vendelux)
+
+## API Evangelist rating
+
+**Kin Score 27.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 85.5 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 23.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/vendelux/](https://apis.io/providers/vendelux/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Vendelux: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/vendelux/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
